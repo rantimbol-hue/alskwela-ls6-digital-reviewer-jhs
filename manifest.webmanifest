@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "JHS ALS A&E Reviewer LS 6 - Digital Citizenship",
+  "short_name": "JHS A&E LS6 Digital",
+  "description": "ALSKwela A&E 2027 Junior High School LS6 Digital Citizenship. 120 questions, Taglish explanations, offline practice and PDF reporting.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#12243a",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
