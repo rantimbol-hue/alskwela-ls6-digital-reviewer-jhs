@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache, no-store"><title>ALSKwela Report Update Check - v3.3</title><style>
+body{margin:0;background:#eef4f8;color:#1b3448;font:16px/1.5 system-ui,sans-serif}main{max-width:580px;margin:35px auto;padding:24px;background:white;border-radius:18px;box-shadow:0 7px 30px #16344a17}h1{font-size:24px;margin:0 0 9px}button,a.link{display:inline-block;background:#006c74;color:white;padding:12px 15px;border:0;border-radius:10px;font:600 15px system-ui;margin:6px 6px 6px 0;text-decoration:none}#status{background:#f3f8f9;border-left:5px solid #00a0a0;border-radius:4px;padding:13px;white-space:pre-wrap;min-height:65px}small{color:#58707e}.muted{opacity:.7}</style></head><body><main><h1>ALSKwela — PDF Update</h1><p>JHS LS6 Digital · Three-Section Study Report v3.3</p><p>Check that the update has been published to this repository. This will <b>not</b> delete saved learner practice results.</p><button id="repair">Check and activate v3.3</button><a class="link" href="./">Open Reviewer</a><p id="status" aria-live="polite">Connect to the internet, then select Check and activate.</p><small>After a successful update, open the reviewer. The large update dialogue no longer appears; the current version is shown discreetly in the page footer.</small></main>
+<script>
+const status=document.getElementById('status'),button=document.getElementById('repair');
+async function run(){button.disabled=true;status.textContent='Checking published version…';try{
+ const r=await fetch('./report-v3-check.json?verify='+Date.now(),{cache:'no-store'});
+ if(!r.ok)throw new Error('Version file is missing from the published root: HTTP '+r.status);
+ const info=await r.json();if(info.build!=='jhs-ls6-digital-studyreport-v3-3-20261117')throw new Error('Published files are not v3.3 yet. Check your GitHub Pages deployment.');
+ if(!('serviceWorker' in navigator))throw new Error('Open directly in Chrome or another browser that supports service workers.');
+ const reg=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});await reg.update();
+ if(reg.waiting)reg.waiting.postMessage({type:'SKIP_WAITING'});
+ let active=false;for(let i=0;i<35;i++){
+   await new Promise(ok=>setTimeout(ok,200));
+   const w=reg.active;if(w){const v=await new Promise(resolve=>{const channel=new MessageChannel();const timer=setTimeout(()=>resolve(null),700);channel.port1.onmessage=e=>{clearTimeout(timer);resolve(e.data?.version||null)};w.postMessage({type:'GET_VERSION'},[channel.port2]);});if(v==='3.3'){active=true;break;}}
+ }
+ if(!active)throw new Error('v3.3 files published, but offline update is still activating. Close/reopen Chrome and retry.');
+ status.textContent='SUCCESS: Report v3.3 is installed. You can open the reviewer now.';
+ button.hidden=true;
+ }catch(e){status.textContent='UPDATE NOT COMPLETE: '+(e.message||String(e))}finally{button.disabled=false;}}
+button.addEventListener('click',run);
+</script></body></html>

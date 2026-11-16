@@ -1,0 +1,7 @@
+{
+  "app": "JHS_LS6_Digital",
+  "version": "3.3",
+  "build": "jhs-ls6-digital-studyreport-v3-3-20261117",
+  "report_type": "Three sections: Performance Snapshot; Let's Learn From Mistakes (LC hints); What I Already Know",
+  "banner": "hidden after update; footer manual check"
+}
