@@ -1,8 +1,11 @@
 {
   "app": "JHS_LS6_Digital",
-  "version": "4.0",
-  "build": "jhs-ls6-digital-bank-v4-0-20261117",
-  "report_type": "Three sections: Performance Snapshot; Let's Learn From Mistakes (LC hints); What I Already Know",
+  "version": "4.0.2",
+  "build": "jhs-ls6-digital-bank-v4-0-20261117-timing-v4-0-2",
+  "report_type": "Three sections; score, start and finish times, elapsed duration; missed-answer LC hints",
   "banner": "hidden after update; footer manual check",
-  "question_bank": "expandable v4.0; original bank unchanged"
+  "question_bank": "expandable v4.0; existing bank unchanged",
+  "footer_branding": "Developed by Ralph Anthony Timbol",
+  "time_zone": "Asia/Manila (PHT)",
+  "duration_definition": "Wall-clock elapsed time, including breaks"
 }

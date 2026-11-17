@@ -1,7 +1,7 @@
 /* ALSKwela bank-ready v4.0 — pre-cache foundation and expansion sets. */
-const CACHE="alskwela-ae2027-jhs-ls6-digital-bank-v4-0-20261117";
+const CACHE="alskwela-ae2027-jhs-ls6-digital-bank-v4-0-20261117-timing-v4-0-2";
 const PREFIX="alskwela-ae2027-jhs-ls6-digital-";
-const VERSION='4.0';
+const VERSION='4.0.2';
 const ROOT=new URL(self.registration.scope);
 const ASSETS=['./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./verify-update-v3.html','./report-v3-check.json','./bank/expansion-loader.js','./bank/manifest.json','./bank/foundation.json'];
 async function cacheOne(cache,path){
