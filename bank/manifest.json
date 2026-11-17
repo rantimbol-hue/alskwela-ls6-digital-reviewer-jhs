@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "app_id": "JHS_LS6_Digital",
+  "bank_version": "1.0.0",
+  "trial_size": 40,
+  "foundation_count": 120,
+  "foundation_sha256": "f2c39a3ba3fc5de037dcc2a0efe00e762b2d12f5d5ad57bff885446e77eb13dd",
+  "foundation_sets": [
+    "A",
+    "B",
+    "C"
+  ],
+  "curriculum_reference": "DepEd 2026 Revised ALS CG",
+  "new_guideline_sources": [],
+  "sets": [],
+  "description": "Append only new sets here. Existing foundation A-C is locked."
+}
